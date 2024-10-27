@@ -1,3 +1,4 @@
+cd ~ || exit 1
 cd .. || exit 1
 cd .. || exit 1
 cd etc/ || exit 1
