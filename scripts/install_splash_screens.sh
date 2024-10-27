@@ -1,19 +1,30 @@
-git clone --depth=1 https://github.com/ehettervik/es-runcommand-splash.git splash_screens
-
-echo "Repositorio clonado"
 #!/bin/bash
 
-# Directorios
-splash_screens_dir="~/config/scripts/splash_screens"
-config_dir="~/../../opt/retropie/configs"
+# Clonar el repositorio
+git clone --depth=1 https://github.com/ehettervik/es-runcommand-splash.git ~/config/scripts/splash_screens
 
-echo "Inicia movimiento de archivos de $splash_screens_dir a ~/../../opt/retropie/configs"
+# Verificar si el clon fue exitoso
+if [ $? -ne 0 ]; then
+    echo "Error al clonar el repositorio."
+    exit 1
+fi
+
+echo "Repositorio clonado"
+
+# Directorios
+splash_screens_dir=~/config/scripts/splash_screens
+config_dir=~/../../opt/retropie/configs
+
+echo "Inicia movimiento de archivos de $splash_screens_dir a $config_dir"
+
 # Recorrer cada carpeta en splash_screens
 for folder in "$splash_screens_dir"/*; do
-echo "Carpeta: $folder"
+    echo "Carpeta: $folder"
+    
     # Verificar que sea un directorio
     if [ -d "$folder" ]; then
-    echo "Se encontro: $folder"
+        echo "Se encontró: $folder"
+        
         # Obtener el nombre de la carpeta (A, B, C, ...)
         folder_name=$(basename "$folder")
         
