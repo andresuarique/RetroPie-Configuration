@@ -45,8 +45,8 @@ for folder in "$splash_screens_dir"/*; do
 done
 
 # Mover logo.png a la carpeta splashscreens
-src_img=~/config/scripts/img/logo.png
-dest_img=~/RetroPie/splashscreens/logo.png
+src_img=~/config/scripts/img/Logo.png
+dest_img=~/RetroPie/splashscreens/Logo.png
 
 # Verificar si el archivo logo.png existe
 if [ -f "$src_img" ]; then
